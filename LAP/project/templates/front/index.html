@@ -1,0 +1,218 @@
+{% extends 'master/master.html' %}
+{% load static %}
+{% block headblock %}
+<title>{{site.name}} | Loan Approval Prediction</title>
+{% endblock %}
+{% block content %}
+<!-- Signup Alert Message -->
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+    {% endfor %}
+{% endif %}
+<!-- Signup alert message End -->
+<!-- Banner Start -->
+<!-- Slider Start -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{%static 'front/images/banner/education.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Education Loan</h3>
+                <p style="color:white;">Personal loans are a type of installment loan.</p>
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+                <a class="btn btn-danger" href="/check">Check Status</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{%static 'front/images/banner/home_Loan.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Home Loan</h3>
+                <p style="color:white;">A home loan is a financing solution that you can avail to buy a home with ease.
+                </p>
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+                <a class="btn btn-danger" href="/check">Check Status</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{%static 'front/images/banner/car_loan.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Car Loan</h3>
+                <p style="color:white;">A car loan is a sum of money a consumer borrows in order to purchase a car.</p>
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a>
+                <a class="btn btn-danger" href="/check">Check Status</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Slider End -->
+<!-- Banner End -->
+<!-- Services Section Start -->
+<section id="servicesSection">
+    <div class="container">
+        <div class="row mr-0">
+            <div class="heading text-center">
+                <h1 class="heading-element">Our Services</h1>
+            </div>
+        </div>
+        <div class="row justify-content-around" style="margin-right: 0 !important;">
+            {% for i in service %}
+                {% if forloop.counter < 5 %}
+                <div class="col-md-3" style="margin-bottom: 20px;">
+                    <div class="card">
+                        <span class="icon"><i class="{{i.iconclass}}" aria-hidden="true"></i></span>
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-2">{{i.title}}</h5>
+                            <p class="card-text">{{i.serviceBody}}</p>
+                            <div class="card-help-link">
+                                <a href="{{i.buttonlink}}" class="card-link btn btn-sm btn-success">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+<!-- News Section Start  just inclue 'master/news.html'-->
+<!-- News Section End -->
+
+<!-- Our Partners Section Start -->
+<section id="partner-section">
+    <div class="container pb-5" id="partner">
+        <div class="row">
+            <div class="heading">
+                <h1 class="heading-content text-center">Our Valuable Partners</h1>
+            </div>
+        </div>
+        <div class="row" style="padding: 0 4px !important;">
+            <div class="col-md-4 mb-3" style="height: 550px;">
+                <div class="box-body p-lg-5 p-md-2">
+                    <div class="row border p-2 pb-4 card-body">
+                        <div class="brand-logo px-0">
+                            <img class="shadow-sm" style="height: 200px; width: 100%; object-fit: cover;"
+                                src="{%static 'front/images/bob.jpg' %}" alt="Image not Available...">
+                        </div>
+                        <div class="name">
+                            <h4 class="text-center">Bank Of Baroda</h4>
+                            <h2 class="text-center text-white">Education Loan</h2>
+                        </div>
+                        <div class="bottom-text">
+                            <p style="text-align: justify; color: #fff; font-weight: bold; letter-spacing: 1px;">Bank of Baroda is an Indian multinational, public sector
+                                banking and financial services company. </p>
+                        </div>
+                        <div class="d-block">
+                            <a href="https://www.bankofbaroda.in/baroda-education-loan-to-students-of-premier-institutions.htm"  target="_blank" class="btn btn-sm btn-success float-end mb-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3" style="height: 550px;">
+                <div class="box-body p-lg-5 p-md-2">
+                    <div class="row border p-2 pb-4 card-body">
+                        <div class="brand-logo">
+                            <img class="shadow-sm" style="height: 200px; width: 100%; object-fit: cover;"
+                                src="{%static 'front/images/hdfc.jpg' %}" alt="Image not Available...">
+                        </div>
+                        <div class="name">
+                            <h4 class="text-center">HDFC</h4>
+                            <h2 class="text-center text-white">Home Loan</h2>
+                        </div>
+                        <div class="bottom-text">
+                            <p style="text-align: justify; color: #fff; font-weight: bold; letter-spacing: 1px;">HDFC Bank Limited is an Indian banking and financial services
+                                company headquartered in Mumbai, Maharashtra.</p>
+                        </div>
+                        <div class="d-block">
+                            <a href="https://www.hdfcbank.com/personal/borrow/popular-loans/home-loan" class="btn btn-sm btn-success float-end"  target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 550px;">
+                <div class="box-body p-lg-5 p-md-2">
+                    <div class="row border p-2 pb-4 card-body">
+                        <div class="brand-logo">
+                            <img class="shadow-sm" style="height: 200px; width: 100%; object-fit: cover;"
+                                src="{%static 'front/images/sbi.jpg' %}" alt="Image not Available...">
+                        </div>
+                        <div class="name">
+                            <h4 class="text-center">State Bank</h4>
+                            <h2 class="text-center text-white">Personal Loan</h2>
+                        </div>
+                        <div class="bottom-text">
+                            <p style="text-align: justify; color: #fff; font-weight: bold; letter-spacing: 1px;">State Bank of India is an Indian multinational, public sector
+                                banking and financial services statutory body headquartered in Mumbai, Maharashtra.</p>
+                        </div>
+                        <div class="d-block">
+                            <a  target="_blank" href="https://sbi.co.in/web/personal-banking/loans/personal-loans/loans-to-salaried-customers-not-maintaining-salary-account-with-us" class="btn btn-sm btn-success float-end">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our Partners Section End -->
+
+{% include 'master/counter.html' %}
+
+<!-- Our team Section Start -->
+<div id="ourTeam">
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="heading text-center py-3">
+                <h1 class="heading-content">Who we are ?</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 shadow-lg offset-md-6 offset-sm-6">
+                    <div class="content-heading text-center">
+                        <h3 class="content-heading-name">ANKIT SAURABH</h3>
+                    </div>
+                    <p class="content-writing">
+                        <ul class="" style="list-style-type: none; color: #fff; font-size: 18px;">
+                            <li style="margin-bottom: 10px;"><i class="fa fa-check-circle" aria-hidden="true" style="margin-right: 5px; color: #5fcf80; font-size: 20px;"></i>We are the orginazitaion Name Loan Approval Prediction. </li>
+                            <li style="margin-bottom: 10px;"><i class="fa fa-check-circle" aria-hidden="true" style="margin-right: 5px; color: #5fcf80; font-size: 20px;"></i>Our job is to develop logics which helps user to predict their loan application is Approved or Rejected a per the RBI guidelines.</li>
+                            <li style="margin-bottom: 10px;"><i class="fa fa-check-circle" aria-hidden="true" style="margin-right: 5px; color: #5fcf80; font-size: 20px;"></i>We are commited to give you awesome Services which helps you to do your work in easy way.</li>
+                        </ul>
+                    </p>
+                    <div class="modal-footer mt-3">
+                        <div class="social-links">
+                            <a href="{{site.fb}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="{{site.insta}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="{{site.tw}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="{{site.linkden}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our team Section End -->
+<!-- News Section Start -->
+
+{% include 'master/footer.html' %}
+{% include 'master/popup.html' %}
+
+{% endblock %}

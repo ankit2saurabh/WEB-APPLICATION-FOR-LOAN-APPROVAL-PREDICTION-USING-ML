@@ -1,0 +1,66 @@
+{% extends 'user/master.html' %}
+{% include 'master/master.html' %}
+{% load static %}
+{% block content %}
+<!-- Mini Top Stats Row -->
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1><i class="fa fa-table"></i>User List<br><small>You can Edit and Delete Messages.</small></h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>Registerd User</li><li><a href="/admin/existuser">List</a></li>
+</ul>
+<!-- END Datatables Header -->
+<!-- Datatables Content -->
+<div class="block full">
+    <div class="block-title">
+        <h2><strong>Registerd </strong>User</h2>
+    </div>
+    <div class="table-responsive">
+        <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Contact</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cc in reg_user %}
+                <tr>
+                    <td class="text-center">{{cc.pk}}</td>
+                    <td class="text-center">{{cc.fname}} {{cc.lname}}</td>
+                    <td>{{cc.email}}</td>
+                    <td>{{cc.dob}}</td>
+                    <td>{{cc.mobnum}}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="/user_edit/{{cc.id}}" data-toggle="tooltip" title="Read"
+                                class="btn btn-xs btn-default"><i class="fa fa-pencil">Edit</i></a>
+                            <a href="/user_delete/{{cc.id}}" data-toggle="tooltip" title="Delete"
+                                class="btn btn-xs btn-danger" onclick="userdelete()"><i class="fa fa-times">Delete</i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END Datatables Content -->
+<!-- END Mini Top Stats Row -->
+{% endblock %}
+{% block footerblock %}
+<!-- Load and execute javascript code used only in this page -->
+<script src="{%static 'back/js/pages/index.js' %}"></script>
+<script>
+    function userdelete(){
+        alert("Changes will be affect after few minutes or try to logout and login again")
+    }
+</script>
+{% endblock %}

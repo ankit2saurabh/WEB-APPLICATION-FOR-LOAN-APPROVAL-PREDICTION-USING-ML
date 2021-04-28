@@ -1,0 +1,82 @@
+{% extends 'user/master.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Mini Top Stats Row -->
+<div class="row">
+    <h1 class="text-center text-danger"><strong style="color: aqua;">Hi, {{user}}</strong><br>This is your Admin Pannel</h1>
+    <hr>
+    <div class="heading-images">
+        <h3 class="text-center" style="font-weight: bold;">OUR DATASET GRAPHS</h3>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/Gender.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Gender</h3>
+        </div>
+    </div>
+
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/Education.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Education</h3>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/Dependents.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Dependents</h3>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/plotter.jpg' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Gender</h3>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/ploty2.jpg' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Gender</h3>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/Married.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Married</h3>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/loanstatus.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Loan Status</h3>
+        </div>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/selfEmp.png' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Self Employee</h3>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/acceptedorrejected.jpg' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Accepted Applications</h3>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-4">
+        <div class="card shadow-lg">
+            <img src="{%static 'front/images/graph/balanced.jpg' %}" alt="Iamge not available">
+            <h3 class="text-center text-success" style="font-weight: bold;">Our Data Balanced</h3>
+        </div>
+    </div>
+</div>
+<!-- END Mini Top Stats Row -->
+
+{% endblock %}
+
+{% block footerblock %}
+<!-- Load and execute javascript code used only in this page -->
+<script src="{%static 'back/js/pages/index.js' %}"></script>
+<script>$(function () { Index.init(); });</script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'master/master.html' %}
+{% load static %}
+{% block headblock %}
+<title>My Report | Loan Approval Prediction</title>
+{% endblock %}
+{% block content %}
+<div class="conta my-5 text-center">
+    <h1><span>Hi, {{name}}</span></h1>
+    <small>We processed your given Data</small>
+</div>
+<div class="container my-5">
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 99%"></div>
+    </div>
+</div>
+<div class="conta my-5 text-center">
+    <h3>
+        <a href="/" class="text-danger">{{msg}}</a></h3>
+</div>
+<div class="container pt-5">
+    <div class="row my-5">
+        <div class="col-md-6 mb-5 text-center">
+            <div class="card shadow-sm">
+                <img src="{%static 'front/images/graph/Aincome.jpg' %}" alt="Image Not available">
+                <h3 class="text-center text-success" style="font-weight: bold;">Annual Income</h3>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5 text-center">
+            <div class="card shadow-sm">
+                <img src="{%static 'front/images/graph/CAincome.jpg' %}" alt="Image Not available">
+                <h3 class="text-center text-success" style="font-weight: bold;">Co-Applicant Income</h3>
+            </div>
+        </div>
+        <div class="col-6 mb-5 text-center">
+            <div class="card shadow-sm">
+                <img src="{%static 'front/images/graph/creditHistory.jpg' %}" alt="Image Not available">
+                <h3 class="text-center text-success" style="font-weight: bold;">Credit History</h3>
+            </div>
+        </div>
+        <div class="col-6 mb-5 text-center">
+            <div class="card shadow-sm">
+                <img src="{%static 'front/images/graph/creditDuration.jpg' %}" alt="Image Not available">
+                <h3 class="text-center text-success" style="font-weight: bold;">Loan Amount Duration</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'master/footer.html' %}
+{% include 'master/popup.html' %}
+{% endblock %}

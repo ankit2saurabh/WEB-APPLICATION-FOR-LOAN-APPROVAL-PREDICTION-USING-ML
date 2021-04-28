@@ -1,0 +1,797 @@
+/* Universal CSS */
+a {
+  text-decoration: none;
+}
+/* ////////////////////----------------- Header CSS ---------------------////////////////////////// */
+/* Header Quick links CSS */
+#quickLinks .px-2 {
+  border-right: 1px solid white;
+  color: white;
+}
+/* Background color for heaing */
+.bg-info {
+  background-image: linear-gradient(15deg, #13547a 20%, #80d0c7 80%);
+}
+footer.bg-info {
+  background-image: linear-gradient(50deg, #13547a 10%, #80d0c7 90%);
+}
+/* Header time and date CSS */
+#time-date {
+  height: auto;
+  border: 1px solid white;
+}
+/* Header Responsive CSS */
+@media screen and (max-width: 768px) {
+  /* Header quick links CSS HIDE */
+  #quickLinks {
+    display: none;
+  }
+  /* Header quick buttons CSS HIDE */
+  #quickButtons {
+    display: none;
+  }
+}
+/* ////////////////////----------------- Header CSS End ---------------------////////////////////////// */
+
+/* //////////---------- Navabr CSS Start-------------////////////////// */
+/* Navbar CSS */
+.navbar {
+  background-image: linear-gradient(15deg, #80d0c7 0%, #13547a 100%);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  top: 0;
+  padding: 0;
+}
+/* Navbar brand or Logo CSS */
+.navbar-brand {
+  color: #fff !important;
+}
+/* nav Link CSS */
+.collapse a {
+  text-align: center !important;
+  font-style: 18px;
+  color: #fff !important;
+}
+/* Nav Link having Dropdown menu */
+.dropdown {
+  align-self: center !important;
+  font-weight: bold;
+}
+/* Dropdown menu CSS */
+.dropdown-menu {
+  /* background: #74b9ff !important; */
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  /* position: relative !important; */
+}
+/* nav Link hover CSS for all */
+.collapse a:hover {
+  background: #13547a;
+}
+/* //////////---------- Navabr CSS End-------------////////////////// */
+
+/* /////////////////----------------------- Banner CSS ---------------------/////////////////////////// */
+/* Height of Banner carousel CSS*/
+.carousel img {
+  height: 75vh !important;
+}
+/*! CSS for carousel item */
+.carousel-item {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/*! Only for caption CSS */
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+#carouselExampleCaptions::before {
+  background: rgba(52, 73, 94, 0.3) !important;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* carousel caption CSS */
+.carousel-caption {
+  margin-bottom: 170px;
+}
+/* carousel caption Heading CSS */
+.carousel-caption h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff !important;
+}
+/* Banner Responsive CSS */
+@media screen and (max-width: 768px) {
+  /* carousel img Responsive CSS */
+  .carousel img {
+    width: 100%;
+    height: 400px !important;
+  }
+  /* carousel caption Responsive CSS */
+  .carousel-caption {
+    margin-bottom: 200px;
+  }
+}
+/* /////////////////----------------------- Banner CSS Ends here---------------------/////////////////////////// */
+
+/* //////////////////////----------------- Services Section CSS ----------------///////////////////// */
+
+/* Services Section body CSS */
+
+/* Services Section Heading CSS */
+#servicesSection .heading {
+  margin-bottom: 20px;
+}
+/* Services Section Heading Before Name CSS */
+#servicesSection .heading h1:before,
+.heading-content::before {
+  content: "|";
+  color: #2d72f1;
+  margin-right: 5px;
+}
+.counter .heading::before {
+  content: "|";
+  color: #fff;
+  margin-right: 5px;
+}
+/* Services Section Heading Name CSS */
+#servicesSection .heading h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+/* Services Section Card CSS */
+#servicesSection .card {
+  transition: 0.5s;
+  padding: 45px 0 2px 0;
+  text-align: center;
+  display: block;
+  background-image: linear-gradient(to bottom, #80f19f 0%, #0fc1eb 100%);
+}
+/* Services Section Card Icon class CSS */
+#servicesSection .card .icon {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  color: #000;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
+}
+/* Services Section Card Icon holding tag CSS */
+#servicesSection .card .icon i {
+  display: block;
+  font-size: 55px;
+  line-height: 86px;
+  color: red;
+}
+/* Services Section Card's Card Body CSS */
+#servicesSection .card .card-body {
+  transition: 0.5s;
+  padding: 0;
+}
+/* Services Section Card's Card Body Element Heading CSS */
+#servicesSection .card .card-body h5 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: uppercase;
+  color: rgb(197, 75, 4);
+}
+
+/* Services Section Card's Card Body Element Paragraph CSS */
+#servicesSection .card .card-body p {
+  color: #fff;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 60px;
+}
+/* Services Section Card hover CSS */
+#servicesSection .card:hover {
+  background-image: linear-gradient(to bottom, #36d0f3 20%, #64f18a 80%);
+  padding: 33px 10px;
+  transition: 0.9s;
+}
+/* Services Section Card Responsive CSS */
+@media screen and (max-width: 767px) {
+  /* Services Box Responsive CSS */
+  #servicesSection .topSpace {
+    margin-top: 20px !important;
+  }
+  #servicesSection .row2 {
+    margin-top: 0 !important;
+  }
+  #servicesSection .row > * {
+    padding-right: 0 !important;
+  }
+}
+
+/* --------------------//////////////// Our Valuable Partners ///////////////----------------- */
+
+#partner .card-body {
+  box-shadow: -2px 2px 5px 3px rgba(35, 162, 172, 0.45);
+  height: 300px;
+  transition-duration: 0.9s;
+  overflow: hidden;
+}
+#partner .card-body:hover {
+  height: 490px;
+  box-shadow: -2px 2px 5px 3px rgba(35, 162, 172, 0.45);
+  transition-property: height;
+}
+#partner h1,
+#partner h4,
+#news-heading {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media screen and (max-width: 600px) {
+  #partner .card-body {
+    height: 550px;
+  }
+  #partner .card-body:hover {
+    height: 550px;
+  }
+}
+#footer-content ul {
+  list-style: none;
+  /* border: 1px solid red; */
+  color: white;
+  padding: 0;
+}
+
+#footer-content ul li {
+  color: white;
+  border-bottom: 3px solid rgb(228, 228, 228);
+  padding: 5px 0;
+}
+
+#footer-content ul li a {
+  color: white;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+#footer-content ul li a:hover {
+  color: thistle;
+}
+
+#servicesSection,
+#partner-section {
+  padding: 30px 0;
+  /* background-image: linear-gradient(to bottom, rgb(203, 250, 176) 20%, #479b2e 60%); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Our teams Section Image CSS */
+#ourTeam .container-fluid {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*/////////////////------------------- My Team CSS ---------------------//////////////////////*/
+/* Our team Main Heading before Line CSS */
+#ourTeam .heading-content::before,
+#ourTeam .heading-content::after {
+  content: "|";
+  color: #76c4f8;
+  font-weight: bold;
+  margin-left: 2px;
+}
+/* Our team Main Heading CSS */
+#ourTeam .heading-content {
+  color: rgb(255, 240, 240);
+}
+/* Our team name CSS */
+#ourTeam .content-heading {
+  color: #fff;
+  padding-top: 20px;
+}
+/* Our team name content tag CSS */
+#ourTeam .content-heading h3 {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+/* Our team Writing content CSS */
+#ourTeam .content-writing {
+  color: aliceblue;
+  text-align: justify;
+  font-size: 18px;
+}
+/* Our team Social media CSS */
+#ourTeam .social-links i {
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid grey;
+  border-radius: 50%;
+  font-size: 28px;
+}
+/* Our team Social media hover CSS */
+#ourTeam .social-links i:hover {
+  font-size: 29px;
+  background-color: gray;
+}
+/* Our team Image CSS */
+#ourTeam .col-md-5 img {
+  width: 100%;
+}
+/* Our Team Section Card Responsive CSS */
+@media screen and (max-width: 768px) {
+  /* Our team image's div responsive CSS */
+  #ourTeam .col-sm-6 {
+    margin-top: 20px !important;
+  }
+  /* Our team Image responsive CSS */
+  #ourTeam .col-md-5 img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 575px) and (max-width: 767px) {
+  /* Our team Image responsive CSS */
+  #ourTeam .col-md-5 img {
+    width: 520px;
+    height: auto;
+    overflow-x: auto;
+  }
+}
+/* ------------- Our tems Css ends here ----------------------- */
+
+/* ////////////------------- Footer CSS Starts here ----------------/////////////// */
+
+/* Footer social icons CSS */
+#social-icons {
+  list-style: none;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+/* Footer social icons CSS for list */
+#social-icons li {
+  display: inline-block;
+  padding-left: 5px;
+}
+/* Footer social icons CSS for anchor tag */
+#social-icons li a {
+  font-size: 23px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 36px;
+}
+/* Footer All Heading CSS */
+footer .heading {
+  box-shadow: inset 3px 0px 0px 0px red;
+  padding-left: 10px;
+}
+/* Footer CSS all UL tag */
+#footer-content ul {
+  list-style: none;
+  color: white;
+  padding: 0;
+}
+/* Footer CSS all li tag */
+#footer-content ul li {
+  color: white;
+  border-bottom: 3px solid rgb(228, 228, 228);
+  padding: 5px 0;
+}
+/* Footer CSS all UL li anchor tag CSS*/
+#footer-content ul li a {
+  color: white;
+  font-size: 18px;
+  padding-left: 5px;
+}
+/* Footer CSS all UL li anchor tag hover CSS*/
+#footer-content ul li a:hover {
+  color: thistle;
+}
+/* ////////////------------- Footer CSS Ends here ----------------/////////////// */
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+
+html {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+.news-title-name {
+  display: block;
+  font-size: 28px;
+  font-weight: 500;
+}
+.button-read:hover {
+  cursor: wait;
+  color: green;
+}
+@media screen and (max-width: 576px) {
+  .news-title-name {
+    margin-right: 10px;
+  }
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.item-bg {
+  width: 300px;
+  height: 500px;
+  position: absolute;
+  top: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 26px 6px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: all 0.3s;
+  left: -30px;
+}
+/* 
+        .item-bg.active {
+            left: 0;
+            top: 0;
+            opacity: 1;
+        } */
+
+.news-slider {
+  z-index: 2;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .news-slider {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .news-slider {
+    margin-top: 45px;
+  }
+}
+
+.news-card-body {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.news-body {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .news-body {
+    width: 340px;
+  }
+}
+
+.news-body.swiper-slide {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.news-body.swiper-slide-active,
+.news-body.swiper-slide-prev,
+.news-body.swiper-slide-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.news-slider__ctr {
+  position: relative;
+  z-index: 12;
+}
+
+.news-slider__arrow {
+  background: #fff;
+  border: none;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 26px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  z-index: 12;
+  cursor: pointer;
+  outline: none !important;
+}
+
+.news-slider__arrow:focus {
+  outline: none !important;
+}
+
+.news-slider__arrow .icon-font {
+  display: inline-flex;
+}
+
+.news-slider__arrow.news-slider-prev {
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.news-slider__arrow.news-slider-next {
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.news-slider__pagination {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.news-slider__pagination .swiper-pagination-bullet {
+  width: 13px;
+  height: 10px;
+  display: inline-block;
+  background: #fff;
+  opacity: 0.2;
+  margin: 0 5px;
+  border-radius: 20px;
+  transition: opacity 0.5s, background-color 0.5s, width 0.5s;
+  transition-delay: 0.5s, 0.5s, 0s;
+}
+
+.news-slider__pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #ffffff;
+  width: 100px;
+  transition-delay: 0s;
+}
+
+@media screen and (max-width: 576px) {
+  .news-slider__pagination .swiper-pagination-bullet-active {
+    width: 70px;
+  }
+}
+
+.news-content {
+  padding: 40px;
+  color: #fff;
+  border-radius: 10px;
+  display: block;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 800px) {
+  .news-content:hover {
+    color: #222222;
+    transition-delay: 0.1s;
+  }
+
+  .news-content:hover .news-date,
+  .news-content:hover .news-title,
+  .news-content:hover .news__txt {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  .news-content:hover .news-related-img {
+    box-shadow: none;
+  }
+}
+
+.news-content.active {
+  color: #222222;
+}
+
+.news-content.active .news-date,
+.news-content.active .news-title,
+.news-content.active .news__txt {
+  opacity: 1;
+}
+
+.news-content.active .news-related-img {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 992px) {
+  .news-content {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .news-content {
+    padding: 20px;
+  }
+}
+.news-date {
+  padding-bottom: 5px;
+  border-bottom: 2px solid;
+  display: inline-block;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  font-size: 16px;
+}
+.news-date::before {
+  content: "\f073";
+  font-family: FontAwesome;
+  margin-right: 10px;
+}
+@media screen and (max-width: 576px) {
+  .news-date {
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 0;
+  }
+}
+
+.news-title {
+  font-size: 25px;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+@media screen and (max-width: 576px) {
+  .news-title {
+    font-size: 22px;
+  }
+}
+
+.news__txt {
+  line-height: 1.6em;
+  font-size: 15px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  text-align: justify;
+}
+
+.news-related-img {
+  border-radius: 10px;
+  box-shadow: 0 6px 26px 6px rgba(0, 0, 0, 0.25);
+  height: 200px;
+  width: 100%;
+  transition: all 0.3s;
+  transform-origin: 0% 0%;
+}
+
+@media screen and (max-width: 576px) {
+  .news-related-img {
+    height: 180px;
+  }
+}
+
+.news-related-img img {
+  max-width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.counter h1,
+.counter h3 {
+  text-transform: uppercase;
+}
+
+.counter {
+  text-align: center;
+  cursor: pointer;
+  color: #13547a;
+  background-image: linear-gradient(45deg, #13547a 20%, #80d0c7 80%);
+}
+.counter-count {
+  font-size: 50px;
+  font-weight: bold;
+  position: relative;
+  color: #000000;
+  text-align: center;
+  display: inline-block;
+}
+.counter i {
+  font-size: 72px;
+  text-align: center;
+}
+.counter .card {
+  background-image: linear-gradient(to right, rgba(29, 250, 232, 0), #80d0c7);
+}
+.counter .card:hover {
+  background-image: linear-gradient(to right, #80d0c7, rgba(29, 250, 232, 0));
+  color: #034b42;
+}
+
+/* ////////////-------------////// Contact page CSS /////////////////------------------////////////*/
+.info {
+  width: 100%;
+  background: #fff;
+}
+
+.info i {
+  font-size: 20px;
+  color: #80d0c7;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #ecf9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #37423b;
+}
+
+.info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #657a6d;
+}
+
+.info .email,
+.info .phone {
+  margin-top: 40px;
+}
+
+.info .email:hover i,
+.info .address:hover i,
+.info .phone:hover i {
+  background: #80d0c7;
+  color: #fff;
+}
+.heading-above-contact {
+  background-color: #6e9c98;
+  color: white;
+}
+/* ///////---------------/////////////// About us Page ///////---------------///////////////*/
+/* Details of Abous us page CSS */
+.content-details {
+  font-size: 19px;
+}
+/* Details of Abous us page for UL tag CSS*/
+.content-details ul {
+  list-style: none;
+  padding: 0;
+}
+/* Details of Abous us page for UL uder li tag CSS*/
+.content-details ul li {
+  padding-bottom: 10px;
+}
+
+.content-details ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #5fcf80;
+}
+/* ///////---------------/////////////// About us Page CSS Ends Here ///////---------------///////////////*/

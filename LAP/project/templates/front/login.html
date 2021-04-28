@@ -1,0 +1,160 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <title>Login | Loan Approval Prediction</title>
+    <style>
+        body {
+            background: linear-gradient(#13547a65, #80d0c76e),url("{%static 'front/images/background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .center {
+            position: relative;
+            margin-top: 10%;
+        }
+        .col-md-6 {
+            color: #fff;
+        }
+        .bg-info {
+            background-color: rgba(0, 0, 0, 0.651) !important;
+        }
+        label {
+            font-weight: bold;
+        }
+        h1 {
+            text-transform: uppercase;
+        }
+        h1::after, h1::before {
+            content: "|";
+            margin-right: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+            color: rgba(21, 226, 21, 0.76);
+        }
+        .text-decoration-none:hover{
+            text-decoration: underline !important;
+            color: rgb(182, 178, 178) !important;
+        }
+        .shadow-lg{
+            background-color: rgba(0, 0, 0, 0.438) !important;
+            border-style: outset !important;
+        }
+        @media screen and (max-width: 400px) {
+            .center{
+                margin-top: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-body">
+        <div class="container">
+            <div class="center">
+                <div class="row" style="margin-right: 0 !important;">
+                    <div class="col-md-3 col-lg-4"></div>
+                    <div class="shadow-lg border rounded col-lg-4 col-md-6 col-sm-12 px-2 mx-2">
+                        <div>
+                            <form action="{%url 'checklogin' %}" class="row g-3 needs-validation" method="POST" novalidate>
+                                {% csrf_token %}
+                                <h1 class="heading text-center mb-3">Login</h1>
+                                <div class="col-12 mt-3">
+                                    <i class="fa fa-envelope prefix grey-text"></i>
+                                    <label for="usernam" class="form-label">First name</label>
+                                    <input type="email" class="form-control" id="usernam"
+                                        pattern="[^\s@]+@[^\s@]+\.[^\s@]*{10,320}" placeholder="Your Email" name="usernam"
+                                        required autocomplete="off" aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-white">We'll never share your Email with
+                                        anyone
+                                        else.</small>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please Enter your correct email.
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <i class="fa fa-lock prefix grey-text"></i>
+                                    <label for="userpass" class="form-label">Last name</label>
+                                    <input type="password" class="form-control" id="userpass"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}"
+                                        placeholder="Your Password" name="userpass" required autocomplete="off"
+                                        aria-describedby="passwordHelp">
+                                    <small id="passwordHelp" class="form-text text-white">We'll never share your Password
+                                        with anyone
+                                        else.</small>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please Enter your correct Password.
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="icChecked" checked>
+                                        <label class="form-check-label" for="icChecked">Remeber me</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <a href="/forgetPassword" class="float-end text-decoration-none text-white">Forget Password</a>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary float-end mx-2" type="submit">Login</button>
+                                </div>
+                                <div class="md-form mt-3">
+                                    {% for message in messages %}
+                                    <p style="color: #f00; font-weight: bold;" class="text-center">{{message}}</p>
+                                    {% endfor %}
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3 col-lg-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="fixed-bottom bg-info py-2 mt-5">
+            <div class="text-center text-white">All Rights Reserved © 2021 by -
+            <a class="text-white" href="https://vit.ac.in/" target="_blank" style="text-decoration: none">Vellore Institue of
+                Technology</a></div>
+        </div>
+    </footer>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

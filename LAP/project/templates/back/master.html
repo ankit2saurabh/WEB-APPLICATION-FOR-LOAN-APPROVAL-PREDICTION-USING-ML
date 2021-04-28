@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+
+    <title>{{user}}'s Pannel | Loan Approval Prediction</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="{%static 'back/img/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon57.png' %}" sizes="57x57">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon72.png' %}" sizes="72x72">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon76.png' %}" sizes="76x76">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon114.png' %}" sizes="114x114">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon120.png' %}" sizes="120x120">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon144.png' %}" sizes="144x144">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" href="{%static 'back/img/icon180.png' %}" sizes="180x180">
+    <!-- END Icons -->
+    <!-- Stylesheets -->
+    <!-- Bootstrap is included in its original form, unaltered -->
+    <!-- <link rel="stylesheet" href="{%static 'back/css/bootstrap.min.css' %}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <!-- Related styles of various icon packs and plugins -->
+    <link rel="stylesheet" href="{%static 'back/css/plugins.css' %}">
+
+    <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+    <link rel="stylesheet" href="{%static 'back/css/main.css' %}">
+
+    <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+    <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+    <link rel="stylesheet" href="{%static 'back/css/themes.css' %}">
+    <link rel="stylesheet" href="{%static 'front/css/style.css' %}" />
+    <!-- END Stylesheets -->
+
+    <!-- Modernizr (browser feature detection library) -->
+    <script src="{%static 'back/js/vendor/modernizr.min.js' %}"></script>
+    <style>
+        span {
+            text-decoration: none !important;
+        }
+        .logout-button-link{
+            color: red; 
+            text-decoration: none; 
+            margin-right: 10px; 
+            border: 3px solid white; 
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 20px;
+            background-color: #fff;
+        }
+        .logout-button-link:hover{
+            color: #fff;
+            border: 2px solid red;
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page-wrapper">
+        <div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+            <!-- Main Sidebar -->
+            <div id="sidebar">
+                <!-- Wrapper for scrolling functionality -->
+                <div id="sidebar-scroll">
+                    <!-- Sidebar Content -->
+                    <div class="sidebar-content">
+                        <!-- Brand -->
+                        <a href="/panel" class="sidebar-brand">
+                            <i class="gi gi-flash"></i><span
+                                class="sidebar-nav-mini-hide"><strong>{{user}}'s </strong>Panel</span>
+                        </a>
+                        <!-- END Brand -->
+
+                        <!-- User Info -->
+                        <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
+                            <div class="sidebar-user-avatar">
+                                <a href="/panel">
+                                    <img src="{%static 'back/img/placeholders/avatars/avatar2.jpg' %}" alt="avatar">
+                                </a>
+                            </div>
+                            <div class="sidebar-user-name">{{user}}</div>
+                            <div class="sidebar-user-links" style="text-align: right !important;">
+                                <a href="/logout" data-toggle="tooltip" data-placement="bottom" title="Logout"><i
+                                        class="gi gi-exit" style="color: #fff !important;"></i></a>
+                            </div>
+                        </div>
+                        <!-- END User Info -->
+
+                        <!-- Sidebar Navigation -->
+                        <ul class="sidebar-nav">
+                            <li>
+                                <a href="/panel" class=" active" style="text-decoration: none;"><i
+                                        class="gi gi-stopwatch sidebar-nav-icon"></i><span
+                                        class="sidebar-nav-mini-hide">Dashboard</span></a>
+                            </li>
+                            <!-- <i class="fas fa-check-circle"></i> -->
+                            <li>
+                                <a href="/checkStatus" class=" active" style="text-decoration: none;"><i
+                                        class="fa fa-check-circle sidebar-nav-icon"></i><span
+                                        class="sidebar-nav-mini-hide">Check Status</span></a>
+                            </li>
+
+                        </ul>
+                        <!-- END Sidebar Navigation -->
+                    </div>
+                    <!-- END Sidebar Content -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </div>
+            <!-- END Main Sidebar -->
+
+            <!-- Main Container -->
+            <div id="main-container">
+                <header class="navbar navbar-default">
+                    <!-- Left Header Navigation -->
+                    <ul class="nav navbar-nav-custom">
+                        <!-- Main Sidebar Toggle Button -->
+                        <li>
+                            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
+                                <i class="fa fa-bars fa-fw"></i>
+                            </a>
+                        </li>
+                        <!-- END Main Sidebar Toggle Button -->
+
+                    </ul>
+                    <!-- END Left Header Navigation -->
+
+                    <!-- Search Form -->
+                    <div class="logout-button">
+                        <a href="/" class="logout-button-link"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <a href="/logout" class="logout-button-link"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- END Search Form -->
+
+                </header>
+                <!-- END Header -->
+
+                <!-- Page content -->
+                <div id="page-content">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+                <!-- END Page Content -->
+
+                <!-- Footer -->
+                <footer class="clearfix">
+                    <div class="pull-right">
+                        Crafted with <i class="fa fa-heart text-danger"></i> by <a href="#" target="_blank">Ankit
+                            Saurbah</a>
+                    </div>
+                    <div class="pull-left">
+                        <span id="year-copy"></span> &copy; <a href="https://vit.ac.in/" target="_blank">VIT</a>
+                    </div>
+                </footer>
+                <!-- END Footer -->
+            </div>
+            <!-- END Main Container -->
+        </div>
+        <!-- END Page Container -->
+    </div>
+    <!-- END Page Wrapper -->
+
+    <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+    <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+    <script src="{%static 'back/js/vendor/jquery.min.js' %}"></script>
+    <script src="{%static 'back/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{%static 'back/js/plugins.js' %}"></script>
+    <script src="{%static 'back/js/app.js' %}"></script>
+
+    <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->
+    <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="{%static 'back/js/helpers/gmaps.min.js' %}"></script>
+
+    {% block footerblock %}
+    {% endblock %}
+
+</body>
+
+</html>

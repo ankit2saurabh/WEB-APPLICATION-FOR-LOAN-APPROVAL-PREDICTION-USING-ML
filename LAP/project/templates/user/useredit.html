@@ -1,0 +1,103 @@
+{% extends 'user/master.html' %}
+{% load static %}
+{% block content %}
+<!-- Mini Top Stats Row -->
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1>
+            <i class="fa fa-table"></i>Edit user<br><small>You can Edit Your user Here.</small>
+        </h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>user</li>
+    <li><a href="/admin/user/edit/{{pk}}">Edit</a></li>
+</ul>
+<!-- END Datatables Header -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- Horizontal Form Block -->
+        <div class="block">
+            <!-- Horizontal Form Title -->
+            <div class="block-title">   
+                <h2><strong>Edit</strong> Form</h2>
+            </div>
+            <!-- END Horizontal Form Title -->
+
+            <!-- Horizontal Form Content -->
+            <form action="{%url 'edituserData' %}" method="post" class="form-horizontal form-bordered"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="fname" pattern="[A-Za-z]{2,30}" class="form-control mt-2" placeholder="First Name.." value="{{userdata.fname}}" required>
+                    </div>
+                    <div class="col-md-5 m-3">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lname" pattern="[A-Za-z ]{2,100}" class="form-control mt-2" placeholder="Last Name.." value="{{userdata.lname}}" required>
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="fatherName">Father Name</label>
+                        <input type="text" id="fatherName" name="fatherName"value="{{userdata.fathername}}"
+                        pattern="[A-Za-z ]{2,100}" class="form-control mt-2" placeholder="Father's Name.." required>
+                    </div>
+                    <div class="col-md-5 m-3">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" pattern="[A-Za-z ]{2,30}" id="dob" name="dob" class="form-control datepicker mt-2" required>
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="mno">Mobile Number</label>
+                        <input type="text" id="mno" name="mno" pattern="[6-9]{1}[0-9]{9}" value="{{userdata.mobnum}}"
+                            class="form-control mt-2" placeholder="Enter Contact Number.." required>
+                    </div>
+                    <div class="col-md-5 m-3">
+                        <label for="mail">Email</label>
+                        <input type="email" value="{{userdata.email}}" id="mail" name="mail" 
+                        pattern="[^\s@]+@[^\s@]+\.[^\s@]*{10,320}" class="form-control mt-2" placeholder="Enter Email.."
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <button type="reset" class="btn btn-lg btn-danger" value="Reset">Reset</button>
+                        <button type="submit" class="btn btn-lg btn-success" value="Submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!-- END Horizontal Form Content -->
+        </div>
+        <!-- END Horizontal Form Block -->
+
+    </div>
+</div>
+{% endblock %}
+{% block footerblock %}
+<!-- Load and execute javascript code used only in this page -->
+<script src="{%static 'back/js/pages/formsGeneral.js' %}"></script>
+<script>$(function () { FormsGeneral.init(); });</script>
+<script>
+    function Validate() {
+        var image = document.getElementById("imgfile").value;
+
+        if (image != '') {
+            var checkimg = image.toLowerCase();
+            if (!checkimg.match(/(\.jpg|\.png|\.JPG|\.PNG|\.gif|\.GIF|\.jpeg|\.JPEG)$/)) {
+                alert("Please Choose Image File Extensions .jpg,.png,.jpeg,.gif");
+                document.getElementById("file").focus();
+                return false;
+            }
+        }
+        alert("Please Choose Image File Extensions .jpg,.png,.jpeg,.gif otherwise you save illigal file");
+        return true;
+    }
+    document.querySelector(".btn-success").addEventListener("click",function(){
+        alert("Changes will be affect after few minutes or try to logout and login again")
+    })
+</script>
+{% endblock %}

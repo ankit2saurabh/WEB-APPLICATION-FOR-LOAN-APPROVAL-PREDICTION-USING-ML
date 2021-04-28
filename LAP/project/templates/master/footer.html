@@ -1,0 +1,72 @@
+<!-- Footer Starts Here -->
+<footer class="bg-info">
+    <div class="container py-5 text-white">
+        <div class="row pb-4">
+            <div class="col-lg-8 col-md-6 mb-md-3">
+                <h3 class="text-center text-uppercase main-heading">
+                    Loan Approval Preediction
+                </h3>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <ul id="social-icons" class="float-end">
+                    <li><a href="{{site.fb}}" target="_blank" class="fa fa-facebook-square"></a></li>
+                    <li><a href="{{site.tw}}" target="_blank" class="fa fa-twitter-square"></a></li>
+                    <li><a href="{{site.linkden}}" target="_blank" class="fa fa-linkedin-square"></a></li>
+                    <li><a href="{{site.insta}}" target="_blank" class="fa fa-instagram"></a></li>
+                    <li><a href="{{site.gml}}" target="_blank" class="fa fa-envelope-o"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="footer-content">
+            <div class="col-lg-4 col-md-6 order-lg-1 order-md-1 order-sm-1 mb-md-5 mb-sm-5">
+                <h4 class="heading text-uppercase">about</h4>
+                <p>
+                    {{site.about}}
+                </p>
+                <p>Vellore Institute of Technology</p>
+                <p>Vellore - 632014</p>
+                <p>Tamil Nadu, India</p>
+            </div>
+            <div class="col-lg-3 col-md-6 order-lg-2 order-md-3 order-sm-3 mb-md-5 mb-sm-5">
+                <h4 class="heading text-uppercase">Quick Links</h4>
+                <ul class="quick-links">
+                    <li><a href="/panel">Admin</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 order-lg-3 order-md-4 order-sm-4 mb-md-5 mb-sm-5">
+                <h4 class="heading text-uppercase">Legal</h4>
+                <ul>
+                    <li><a href="/maintainence">Terms & Conditions</a></li>
+                    <li><a href="/maintainence">Privacy Policy</a></li>
+                    <li><a href="/maintainence">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 order-lg-4 order-md-2 order-sm-2 mb-sm-5">
+                <h4 class="heading text-uppercase">Subscribe Now</h4>
+                <form action="/" method="POST" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <input type="email" name="mailid" id="mailid" autocomplete="off" placeholder="Your Mail" class="py-1" aria-describedby="emailHelp"/>
+                    <button type="submit" class="btn btn-outline-success" title="By Hitting Subscribe You subscribed">Subscribe</button>
+                </form>
+                <small id="emailHelp" class="form-text text-white">We'll never share your Email with anyone
+                    else.</small>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.3)">
+        All Rights Reserved © 2021 by -
+        <a class="text-white" href="https://vit.ac.in/" style="text-decoration: none">Vellore Institue of Technology</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer Ends Here -->

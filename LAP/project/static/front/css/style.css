@@ -1,0 +1,76 @@
+/* Navbar CSS */
+.navbar{
+    background-image: linear-gradient(15deg, #80d0c7 0%, #13547a 100%);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    top: 0;
+    padding: 0;
+}
+/* Navbar brand or Logo CSS */
+.navbar-brand{
+    color: #fff !important;
+}
+/* nav Link CSS */
+.collapse a{
+    text-align: center !important;
+    font-style: 18px;
+    color: #fff !important;
+}
+/* Nav Link having Dropdown menu */
+.dropdown{
+    align-self: center !important;
+    font-weight: bold;
+}
+/* Dropdown menu CSS */
+.dropdown-menu{
+    /* background: #74b9ff !important; */
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    /* position: relative !important; */
+}
+/* nav Link hover CSS for all */
+.collapse a:hover{
+    background: #13547a;
+}
+/* //////////---------- Navabr CSS End-------------////////////////// */
+
+/* Header CSS */
+header{
+    background-image: linear-gradient(45deg, #58f7e4 0%, #4187af 100%);
+    color: #fff;
+}
+/* Heading CSS only */
+.heading{
+    text-transform: uppercase;
+}
+/* Heading CSS Before only */
+.heading::before{
+    content: '|';
+    color: #ff00bf;
+    margin-right: 5px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+/* Heading CSS After only */
+.heading::after{
+    content: '|';
+    color: #ff00bf;
+    margin-left: 5px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+/* Error CSS only */
+.error{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+label{
+    font-weight: bold;
+    font-size: 17px;
+}
+label::after{
+    content: '*';
+    color: red;
+    margin-left: 7px;
+}

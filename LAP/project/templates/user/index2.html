@@ -1,0 +1,71 @@
+{% extends 'user/master.html' %}
+{% include 'master/master.html' %}
+{% load static %}
+{% block content %}
+<!-- Mini Top Stats Row -->
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1>
+            <i class="fa fa-table"></i>Contacts List<br><small>You can Read and Delete Messages.</small>
+        </h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>Admin</li>
+    <li><a href="/messageRead">List</a></li>
+</ul>
+<!-- END Datatables Header -->
+<!-- Datatables Content -->
+<div class="block full">
+    <div class="block-title">
+        <h2><strong>Messages</strong> for Admin</h2>
+    </div>
+    <div class="table-responsive">
+        <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Sender Name</th>
+                    <th>Sender Email</th>
+                    <th>Subject</th>
+                    <th>Sender Message</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cc in userMessage %}
+                <tr>
+                    <td class="text-center">{{cc.pk}}</td>
+                    <td class="text-center">{{cc.name}}</td>
+                    <td>{{cc.email}}</td>
+                    <td>{{cc.subject}}</td>
+                    <td>{{cc.issues}}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="/message_delete/{{cc.id}}" data-toggle="tooltip" title="Read"
+                                class="btn btn-xs btn-default" onclick="userdelete()"><i class="fa fa-pencil">Read</i></a>
+                            <a href="/message_delete/{{cc.id}}" data-toggle="tooltip" title="Delete"
+                                class="btn btn-xs btn-danger" onclick="userdelete()"><i class="fa fa-times">Delete</i></a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END Datatables Content -->
+<!-- END Mini Top Stats Row -->
+
+{% endblock %}
+
+{% block footerblock %}
+<!-- Load and execute javascript code used only in this page -->
+<script src="{%static 'back/js/pages/index.js' %}"></script>
+<script>
+    function userdelete(){
+        alert("Changes will be affect after few minutes or try to logout and login again")
+    }
+</script>
+{% endblock %}

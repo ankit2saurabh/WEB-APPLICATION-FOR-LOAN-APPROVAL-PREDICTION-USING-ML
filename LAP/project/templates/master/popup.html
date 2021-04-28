@@ -1,0 +1,233 @@
+<!-- Login Form Modal Start-->
+<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Sign in</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{%url 'checklogin' %}" class="row g-3 needs-validation" method="POST"
+                enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="md-form mb-3">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label for="usernam" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="usernam" name="usernam"
+                            pattern="[^\s@]+@[^\s@]+\.[^\s@]*{10,320}" class="form-control validate"
+                            placeholder="Registered E-Mail" required autocomplete="off" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone
+                            else.</small>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Our requiremnt didn't match.
+                        </div>
+                    </div>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <label for="userpass" class="form-label">Your Password</label>
+                        <input type="password" class="form-control validate" id="userpass" name="userpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}"
+                            class="form-control validate" placeholder="Your Password" required autocomplete="off"
+                            aria-describedby="passwordHelp">
+                        <small id="passwordHelp" class="form-text text-muted">We'll never share your Password with
+                            anyone
+                            else.</small>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Our requiremnt didn't match.
+                        </div>
+                    </div>
+                    <div class="md-form">
+                        {% for message in messages %}
+                        <p style="color: #f00; font-weight: bold;" class="text-center">{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer pb-0">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button id="modalActivate2" type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-dismiss="modal" data-bs-target="#exampleModalPreview">
+                            Sign up
+                        </button>
+                        <button type="submit" class="btn btn-success btn-sm"> Sign in </button>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center border" style="padding-bottom: 5px">
+                <!-- Call Forget Password Modal Form -->
+                <a href="/forgetPassword" onMouseOver="this.style.cursor='pointer'">Forget Password ?
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Form Modal End-->
+
+<!-- Sign up Modal Form START -->
+<div class="modal fade" id="exampleModalPreview" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalLabel">Register Yourself</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{%url 'signup' %}" class="row g-3 needs-validation" method="POST"
+                    enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-user-circle prefix grey-text" aria-hidden="true"></i>
+                            <label for="fname" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="fname" name="fname" pattern="[A-Za-z]{2,30}"
+                                placeholder="Your First Name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-user-circle prefix grey-text" aria-hidden="true"></i>
+                            <label for="lname" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lname" name="lname" pattern="[A-Za-z ]{2,100}"
+                                placeholder="Your Last Name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-user-md prefix grey-text" aria-hidden="true"></i>
+                            <label for="fatherName" class="form-label">Father name</label>
+                            <input type="text" class="form-control" id="fatherName" name="fatherName"
+                                pattern="[A-Za-z ]{2,100}" placeholder="Son / Daughter of" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-calendar prefix grey-text"></i>
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control datepicker" id="dob" name="dob" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-phone prefix grey-text"></i>
+                            <label for="mno" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" id="mno" name="mno" pattern="[6-9]{1}[0-9]{9}"
+                                placeholder="Your Contact Number" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <label for="mail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="mail" name="mail"
+                                pattern="[^\s@]+@[^\s@]+\.[^\s@]*{10,320}" placeholder="Your Email Address" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label for="passw" class="form-label">password</label>
+                            <input type="password" class="form-control" id="passw" name="passw"
+                                title="Input Password and Submit [8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character]"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}"
+                                placeholder="Set a password" required aria-describedby="passHelp">
+                            <small id="passHelp" class="form-text text-muted">We'll never share your Password with
+                                anyone else.</small>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mx-md-5">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label for="cpass" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="cpass" name="cpass"
+                                onfocusout="validatePassword()"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}"
+                                placeholder="Confirm your password" required aria-describedby="passHelp1">
+                            <small id="passHelp1" class="form-text text-muted">We'll never share your Password with
+                                anyone else.</small>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mx-4">
+                        <div class="form-check mx-5">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Agree to terms and conditions
+                            </label>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Our requiremnt didn't match.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                        <button class="btn btn-light mx-sm-5" type="reset">Reset</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="text-center border" style="padding-bottom: 5px">
+                <!-- Call Login Modal2 Form -->
+                <a data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal"
+                    onMouseOver="this.style.cursor='pointer'" style="color: red;">Allready have an Account.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

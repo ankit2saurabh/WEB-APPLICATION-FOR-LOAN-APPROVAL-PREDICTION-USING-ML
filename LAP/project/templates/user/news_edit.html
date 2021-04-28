@@ -1,0 +1,114 @@
+{% extends 'user/master.html' %}
+{% load static %}
+{% block content %}
+<!-- Mini Top Stats Row -->
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1><i class="fa fa-table"></i>Edit News<br><small>You can Edit Your News Here.</small></h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>News</li>
+    <li><a href="/panel/news/edit/{{pk}}">Edit</a></li>
+</ul>
+<!-- END Datatables Header -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- Horizontal Form Block -->
+        <div class="block">
+            <!-- Horizontal Form Title -->
+            <div class="block-title">   
+                <h2><strong>Edit</strong> Form</h2>
+            </div>
+            <!-- END Horizontal Form Title -->
+            <!-- Horizontal Form Content -->
+            <form action="{%url 'editData' %}" method="post" class="form-horizontal form-bordered"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="newstitle">News Title</label>
+                        <input type="text" pattern="[A-Za-z ]{2,30}" title="Maxium 30 Character" value="{{news.name}}"
+                            id="newstitle" name="newstitle" class="form-control mt-2" placeholder="Enter News Title.."
+                            required>
+                    </div>
+                    <div class="col-md-5 m-3">
+                        <label for="news_cat" class="mb-2">Select News Category</label>
+                        <select id="news_cat" name="news_cat" class="select-select2" style="width: 100%;"
+                            data-placeholder="Choose one.." required>
+                            <option value="{{news.category}}" selected>{{news.category}}</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Travelling">Travelling</option>
+                            <option value="Blog">Bloging</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="short_text">News Short Description</label>
+                        <textarea class="form-control mt-2" pattern="[A-Za-z ]{2,100}" title="Maxium 100 Character"
+                            name="short_text" id="short_text" rows="5" placeholder="Short text"
+                            required>{{news.short_txt}}</textarea>
+                    </div>
+                    <div class="col-md-5 m-3">
+                        <label for="long_text">News Description</label>
+                        <textarea class="form-control mt-2" name="long_text" pattern="[A-Za-z ]{2,100000}"
+                            id="long_text" rows="5" placeholder="Long text" required>{{news.body_txt}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="imgfile">Select News Image</label>
+                        <input type="file" class="form-control mt-2" name="imgfile" id="imgfile" onClick="Validate()"
+                            accept="image/gif, image/jpeg, image/png, image/*">
+                    </div>
+                    <div class="col-md-5 px-4">
+                        <img src="{{news.picurl}}" style="display: inline-block; width: 100px; height: 100px;"
+                            alt="Image not Available">
+                    </div>
+                </div>
+                <div class="form-group d-flex">
+                    <div class="col-md-5 m-3">
+                        <label for="writername">Writer name</label>
+                        <input type="text" value="{{news.Writer}}" class="form-control mt-2" pattern="[A-Za-z ]{2,50}"
+                            title="Maxium 50 Character" name="writername" id="writername" placeholder="Writer Name"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!-- END Horizontal Form Content -->
+        </div>
+        <!-- END Horizontal Form Block -->
+
+    </div>
+</div>
+{% endblock %}
+{% block footerblock %}
+<!-- Load and execute javascript code used only in this page -->
+<script src="{%static 'back/js/pages/formsGeneral.js' %}"></script>
+<script>$(function () { FormsGeneral.init(); });</script>
+<script>
+    function Validate() {
+        var image = document.getElementById("imgfile").value;
+
+        if (image != '') {
+            var checkimg = image.toLowerCase();
+            if (!checkimg.match(/(\.jpg|\.png|\.JPG|\.PNG|\.gif|\.GIF|\.jpeg|\.JPEG)$/)) {
+                alert("Please Choose Image File Extensions .jpg,.png,.jpeg,.gif");
+                document.getElementById("file").focus();
+                return false;
+            }
+        }
+        alert("Please Choose Image File Extensions .jpg,.png,.jpeg,.gif otherwise you save illigal file");
+        return true;
+    }
+</script>
+{% endblock %}
